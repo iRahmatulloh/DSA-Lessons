@@ -1,0 +1,231 @@
+							22.03.23 | Introduction DSA
+
+
+-- Data Structure - ma'lumotlarni saqlash va tartiblash uchun ishlatiladigan xotira
+	--Bu orqali kompyuter xotirasida ma'lumotlarga kirish yoki ularni samarali yangilash imkonini beradi.
+
+-- Python Built-in DS - LIst/Tuple/String/Set/Dictionary <-- Data structure hisoblanadi
+
+-- data structure ga misol tortma yoki javon 
+
+--  Algorithm -- muayyan masalani hal qilish uchun aniq belgilangan ko'rsatmalar to'plamidir
+	-- Harakatlar ketma-ketligi
+
+-- choy damlash algoritmi
+
+	1. suvni olamiz
+	2. Uni qaynatamiz
+	3. Choy solamiz va qaynagan suvni quyamiz.
+
+-- Dasturlash - bu ma'lumotlar tuzilmalari va algorithmlardan tashkil topgan. Ma'lumotlar tuzilmalari ma'lumotlarni saqlash uchun ishlatilsa,
+                                algoritmlar ushbu ma'lumotlarnidan foydalangan holda muammoni hal qilish uchun ishlatiladi.
+
+-- Avzalliklari
+
+	- Vaqt uchun tejamkor
+	- Kengaytirish uchun ajoyib
+	- Xotira uchun tejamkor
+
+									-- 01. Big O -
+
+-- Dastur ishlash chog'ida biz 2 ta tamoyilga qattiq amal qilamiz.
+	- Vaqt
+	- Xotira
+
+--  Xamma narsani o'lchash mumkin
+
+-- Logarifm darajani hisoblash uchun kerak
+	- 4 * 4 * 4 = 64 | - X = Log4 64 ==> X 3Log4 4 -> X = 3
+
+		-- Big O Notation
+
+-- (Linear) -> O(n) n ta
+
+-- Logarithmic -> O(Log n) <- asoos 2 ga teng
+
+-- Constant  o(1) -- o'zgarmas qiymat 1
+
+-- Quadratic O(n"2") -- Kvadrat
+
+
+
+-- Time - harakatlar soni ko'payish va kamayishga qarab o'lchanadi.
+
+-- Space(Xotira) - O'zgaruvchilar soni kengayish yoki kamayishga qarab o'lchanadi.
+
+
+								-- 02.Stack
+
+-- Ustma ust tartiblash | Stack uslubi
+
+List -> [ 1, 2, 3, 4, 5 ] --->  5 }
+				        4  }
+					  3   }  <--  Stack 
+					  2  }
+					  1 }
+
+-- Methods : ->
+		- push() - element qo'shish
+		- pop()  - elementni o'chirish
+		- isEmpty() - bo'shmi  yoki yo'q tekshiradi.
+		- isFull() - to'lami yoki yo'q tekshiradi.
+		- peek() - eng tepadagi qiymatni o'chirmasdan olish
+
+-- Stack uslubida | LIFO(OKBCH tamoyili) principle -- Last in First Out(Oxirgi kirgan birinchi chiqadi!)
+
+
+							 	-- 23.03.23 | Queue
+
+-- Queue - navbat
+
+- Queue -> [ 1, 2, 3, 4, 5 ] 
+
+-- Methods : ->
+		- enqueue() - elementni qo'shish
+		- dequeue()  - elementni o'chirish
+		- isEmpty() - bo'shmi  yoki yo'q tekshiradi.
+		- isFull() - to'lami yoki yo'q tekshiradi.
+		- peek() - eng tepadagi qiymatni o'chirmasdan olish
+
+-- Queue da 2 ta pointer - oxiridagi | rear, oldi | front
+
+-- Queue uslubi | FIFO(BKBCH tamoyili) principle - First In First Out
+
+-- Queue da - kirish orqadan(rare) chiqish oldindan(front) 
+
+
+							-- 28.03.23 | linked List
+
+-- Xotiradan har joydan joy egallaydi.
+
+-- Node - bu istalgan turdagi ma'lumotni saqlovchi xisoblanadi va unda keyingi nodega manzil saqlanadi.
+
+-- Node ichida data va nextni qabul qiladi
+
+-- LinkedList 3 turga :
+	- Singly Linked List 
+	- Doubly Linked List
+	- Circular Linked List
+
+-- head bormi yo'qmi tekshirish kerak. Agar bo'lmasa append qilinayotgan qiymatni head qilish kerak.
+
+-- Node ikki hil yo'l bilan o'chiriladi:
+	- Delete other Node
+	- Delete head Node
+
+-- Node delete qilishdan oldin uni head yoki head emasligini tekshirish lozim.
+
+						06. LinkedList part - 3
+
+-- f{x} inchi pozitsiyadagi Nodeni o'chirish:
+	- LinkedList bo'sh emasligini tekshirish
+	- O'chirilayotgan Node head emasligini tekshirish.
+	- Countni 0 dan boshlash.
+	- Loop bilan har bitta elementni iteratsiya qilish va countni increment qilib borish.
+	- Agar position va count tenglashsa o'sha elementni o'chirish
+
+
+									--- 	Hash Table ---
+
+O'zgacha kalit bo'lib, qiymat bilan bog'lash uchun ishlatiladi.
+					     \
+						Key : data
+							/
+						Kalit bog'langan qiymat
+
+-- Hash function -- matematik funksiya bo'lib, u qiymat qabul qiladi va index qaytaradi.
+
+-- Qachonki Hash funksiyasi bir xil indexs generatsiya qilganida u yerda ziddiyat kelib chiqadi.
+		Bu ziidyat - Hash Collision - deb yuritiladi.
+
+-- 				Hash collision -> Two approach for solving this problem:
+
+-- CHaining - zanjirlash. Bu odatda Linked List yaratishga sabab bo'ladi va qidirishni sekinlashtiradi.
+
+-- Open addressing - yangi manzillar ochish. Bu odatda arrayni hajmini doim oshirib borish degani.
+
+-- Load factor - bu array lar sonini uning ichidagi itemslarga bo'lish ( len(array) / nums_items)
+	
+	-- Agar load factor 0.7 dan katta bo'lsa demak  - resize - qilish vaqti kelibdi degani.
+		0.7 dan pasga tushishi yaxshi xolat emas.
+
+				
+											-- Binary Tree
+
+-- Tree | Non-Linear, hierarchical tuzilishga ega data structure bo'lib, shoxlar yordamida bir biriga ulanadi.
+
+	Binary Tree turlari:
+
+-- Full Binary Tree - Har bir internal nodeni yo 2 ta bolasi bor yoki umuman yo'q bo'ladi.
+
+-- Compelete Binary Tree - har bir daraja (chap tomoni) imkon boricha ammo boshqa bir tomoni to'lmagan bo'ladi.
+
+
+
+
+									-- -- Depth Fisrt Search Algorithms | BIrinchi-chuqurlik bo'ylab qidirish
+
+
+-- Tree Traversal - bu Tree ma'lumotlar tuzilmasidagi har bir nodega(...ni tekshirish yoki yangilash) tashrif buyurish
+	BUlarga 2 xil tashrif buyurish mumkin:
+		-- DFS - Depth first
+		-- BFS - Bread first
+
+3 xil turi mavjud:
+	- 1. In-order
+	- 2. Pre-order
+	- 3. Post-order
+
+
+                                                                    -- Sorting Algorithms --
+
+-- 10 xil turi mavjud:
+    - Bubble sort
+    - Selection sort
+    - Quick sort
+    - Insertion sort
+    - Merge sort
+    - Counting sort
+    - Radix sort
+    - Bucket sort
+    - Heap sort
+    - Shell sort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
